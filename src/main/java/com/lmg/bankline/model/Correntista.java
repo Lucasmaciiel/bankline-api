@@ -1,6 +1,7 @@
 package com.lmg.bankline.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @ToString
 @Entity
+@Builder
 public class Correntista {
 
     @Id
