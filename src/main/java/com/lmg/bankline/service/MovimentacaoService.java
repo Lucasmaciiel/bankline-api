@@ -1,9 +1,6 @@
 package com.lmg.bankline.service;
 
 import com.lmg.bankline.dto.NovaMovimentacao;
-import com.lmg.bankline.dto.NovoCorrentista;
-import com.lmg.bankline.model.Conta;
-import com.lmg.bankline.model.Correntista;
 import com.lmg.bankline.model.Movimentacao;
 import com.lmg.bankline.model.MovimentacaoTipo;
 import com.lmg.bankline.repository.CorrentistaRepository;
@@ -13,9 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class MovimentacaoService {
@@ -45,5 +40,9 @@ public class MovimentacaoService {
         correntistaRepository.save(correntista);
 
         movimentacaoRepository.save(movimentacao);
+    }
+
+    public List<Movimentacao> findByIdConta(Integer id){
+        return movimentacaoRepository.findByIdConta(id);
     }
 }
